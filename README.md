@@ -1,4 +1,4 @@
-# Adote-J-
+# Adote-Ja
 Plataforma social para facilitar a adoção de animais, projeto acadêmico TADS - UNIFIL
 
 # Adote-Já 🐶🐱
