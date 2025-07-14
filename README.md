@@ -34,8 +34,7 @@ O **Adote-Já** tem como objetivo ajudar a reduzir o número de animais abandona
 ### Passos:
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/adote-ja.git
-
+git clone [https://github.com/JoaoOtavioGRS/Adote-Ja]
 # Acesse a pasta do projeto
 cd adote-ja
 
