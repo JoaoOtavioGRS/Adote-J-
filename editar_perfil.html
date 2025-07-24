@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Editar Perfil</h2>
+    <form action="{{ url_for('editar_perfil') }}" method="POST" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ usuario.nome }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ usuario.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" name="telefone" value="{{ usuario.telefone }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="foto" class="form-label">Foto de Perfil:</label>
+            <input type="file" class="form-control" id="foto" name="foto">
+{% if usuario.foto and usuario.foto != 'None' and usuario.foto != '' %}
+  <img src="{{ url_for('static', filename='fotos_perfil/' ~ usuario.foto) }}" class="img-thumbnail rounded-circle" width="200" height="200" alt="Foto de Perfil">
+{% else %}
+  <div class="d-flex justify-content-center align-items-center bg-light text-secondary rounded-circle img-thumbnail" style="width: 200px; height: 200px;">
+    <i class="fa-solid fa-user fa-3x"></i>
+  </div>
+{% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
